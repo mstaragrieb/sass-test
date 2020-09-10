@@ -1,8 +1,49 @@
+/* Variables*/
+/* Notes:
+Time spent:
+
+1. 40 minutes, setup and initial debugging (expected localhost to
+refresh on njk save)
+
+2. 30 minutes HTML Setup
+
+3. 30 Sccs Authoring
+
+4. 1 Hour, issues with chrome responsive tooling.
+
+5. 30 mins JS
+
+6. 30 mins attempted to install custom ES lint. Issues with Git?
+Kept getting node message about forbidden access, used default lint.
+
+7. 10 mins General Cleanup and Submit
+
+A little over on time, due to env issues. Well within time for actual work.
+*/
+
+/*Building Normalzing 1rem - 10px*/
+html {
+    font-size: 62.5%;
+    margin: auto;
+}
+
+/* Variables */
 $primary-bg: #000;
 $primary-text-color: #FF3B3B;
+$standard-margin: 1rem;
 
+/* Mixins */
+@mixin bottom_margin{
+  margin-bottom: $standard-margin;
+}
+
+/* Base Styles */
 body {
-	background-color: $primary-bg
+	background-color: $primary-bg;
+	font-weight: 400;
+	font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 1.6em; /* currently ems cause chrome bug misinterpreting rems on body element */
+	color: $primary-text-color;
 }
 
 h1,
@@ -10,6 +51,64 @@ h2,
 h3,
 h4,
 h5,
-p {
+p,
+a {
 	color: $primary-text-color;
+}
+
+/* Flex Setup and Utilities */
+.flex-row{
+  display: flex;
+	flex-flow: row wrap;
+}
+
+.one-half {
+  flex: 1 0 36.4rem;
+  margin-left: $standard-margin;
+  margin-right: $standard-margin;
+}
+
+.image-full-width {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Classes */
+.nav {
+  @include bottom_margin;
+}
+
+.logo-image{
+  height: 6.4rem;
+}
+
+.nav-links{
+  line-height: 6.4rem;
+  margin-left: 20rem;
+}
+
+.upper_section{
+  @include bottom_margin;
+}
+
+.lower_section{
+  @include bottom_margin;
+}
+
+.input{
+  @include bottom_margin;
+}
+
+.comment{
+  @include bottom_margin;
+}
+
+.comment-name{
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .flex-row{
+    flex-flow: row nowrap;
+  }
 }
