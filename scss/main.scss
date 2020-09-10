@@ -74,12 +74,28 @@ a {
 }
 
 /* Classes */
-.nav {
+.comment{
+  @include bottom_margin;
+}
+
+.comment-name{
+  font-weight: bold;
+}
+
+.input{
   @include bottom_margin;
 }
 
 .logo-image{
   height: 6.4rem;
+}
+
+.lower_section{
+  @include bottom_margin;
+}
+
+.nav {
+  @include bottom_margin;
 }
 
 .nav-links{
@@ -89,22 +105,6 @@ a {
 
 .upper_section{
   @include bottom_margin;
-}
-
-.lower_section{
-  @include bottom_margin;
-}
-
-.input{
-  @include bottom_margin;
-}
-
-.comment{
-  @include bottom_margin;
-}
-
-.comment-name{
-  font-weight: bold;
 }
 
 @media (min-width: 768px) {
